@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DayOfTheWeek" representedClassName="DayOfTheWeek" syncable="YES">
+        <attribute name="dayName" optional="YES" attributeType="String"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="dayName" inverseEntity="Task"/>
+    </entity>
+    <entity name="Task" representedClassName="Task" syncable="YES">
+        <attribute name="taskName" optional="YES" attributeType="String"/>
+        <relationship name="dayName" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayOfTheWeek" inverseName="tasks" inverseEntity="DayOfTheWeek"/>
+    </entity>
+    <elements>
+        <element name="DayOfTheWeek" positionX="-45" positionY="0" width="128" height="73"/>
+        <element name="Task" positionX="-18" positionY="36" width="128" height="73"/>
+    </elements>
+</model>
